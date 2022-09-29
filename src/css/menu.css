@@ -52,49 +52,50 @@
 }
 
 .header .hamburguer:before{
-    top: -10px;
+    top: -10px; /* Aqui serve para fazer o primeiro risco do sanduiche */ 
 }
 
 .header .hamburguer:after{
-    bottom: -10px;
+    bottom: -10px; /* Aqui serve para fazer o terceiro risco do sanduiche.
+    O segundo ele é criado automaticamente */ 
 }
 
 .header input{
-    display: none;
+    display: none; /* Oculta o checkbox */ 
 }
 
 .header input:checked ~ label .hamburguer{
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Rotação do elemento todo tanto do before quanto do after */ 
 }
 
 .header input:checked ~ label .hamburguer:before{
-    transform: rotate(90deg);
-    top: 0;
+    transform: rotate(90deg); /* Rotação apenas do primeiro risco do sanduiche */
+    top: 0; /* Deixa o risco de baixo alinhado com o risco de cima, fazendo com que eles se juntam. */ 
 }
 
 .header input:checked ~ label .hamburguer:after{
-    transform: rotate(90deg);
-    bottom: 0;
+    transform: rotate(90deg); /* Rotação apenas do terceiro risco do sanduiche */
+    bottom: 0; /* Deixa o risco de cima alinhado com o risco debaixo, fazendo com que eles se juntam. */ 
 }
 
 @media(max-width: 900px){
     .header .menu{
-        display:block;
+        display:block; /* ativa o sanduiche */
     }
 
     .header nav ul{
-        display: none;
+        display: none; /* Faz os elementos da lista ficarem ocultos */
     }
 
     .header input:checked ~ ul{
-        display: block;
+        display: block; /* ativa o menu e feaz aparecer os elementos da ul um embaixo do outro */
     }
 
     .header nav{
         position: absolute;
         top: 8px;
         right: 20px;
-        z-index: 1;
+        z-index: 1; /* Faz com os elementos do nav sobreponhas ou seja fique por cima da página principal, basicamente ele cria uma camada só para ele. */
     }
 
     .header nav ul{
@@ -106,6 +107,6 @@
     .header nav ul a{
         text-align: center;
         padding: 20px;
-        display: block;
+        display: block; /* Juntamente com o padding que está acima faz os espaçamentos envolta dos itens. */ 
     }
 }
